@@ -1,0 +1,22 @@
+ARG IMAGE_NAME
+# Use the official PostgreSQL image from Docker Hub
+FROM postgres:14
+LABEL image.name=$IMAGE_NAME
+
+# Copy your custom pg_hba.conf file into the container
+COPY pg_hba.conf /etc/postgresql/14/main/pg_hba.conf
+
+COPY init.sql /docker-entrypoint-initdb.d/
+
+# Set environment variables for PostgreSQL
+ENV POSTGRES_PORT=5432
+ENV POSTGRES_DB=mydb
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=12345678
+
+
+# Expose the PostgreSQL port (optional, depending on use case)
+EXPOSE 5432
+
+# Set the command to start PostgreSQL
+CMD ["postgres"]

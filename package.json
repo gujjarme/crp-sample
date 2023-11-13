@@ -1,0 +1,16 @@
+{
+  "name": "custom-reporting-app",
+  "version": "1.0.0",
+  "description": "A custom reporting application with Node.js and Express",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "update": "^0.7.4"
+  }
+}

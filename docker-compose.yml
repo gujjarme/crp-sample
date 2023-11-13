@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  nodejs:
+    build:
+      context: .
+      dockerfile: node_Dockerfile
+      args:
+        IMAGE_NAME: nodejs_image  # Custom image name
+    container_name: nodejs_container
+    links:
+      - postgresql
+    depends_on:
+      - postgresql
+    ports:
+      - "3000:3000"  # Map host port to container port
+    # Other configurations for the Node.js service...
+
+  postgresql:
+    build:
+      context: .
+      dockerfile: pg_Dockerfile
+      args:
+        IMAGE_NAME: postgres_image  # Custom image name
+      
+    container_name: postgresql_container
+    ports:
+      - "5432:5432"  # Map host port to container port
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: D:/AhmadBilal/crp-sample/data
