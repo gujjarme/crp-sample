@@ -110,7 +110,7 @@ DatabaseLoader.checkConnection();
 
 RoutesLoader.initRoutes(app);
 
-const port = 80;
+const port = 3000;
 
 app.listen(port, () => {
   console.log(`Custom reporting app listening at http://localhost:${port}`);
