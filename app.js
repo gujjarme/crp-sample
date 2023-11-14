@@ -100,6 +100,7 @@ require('dotenv').config();
 const {ExpressLoader } = require('./app/loaders/express.loader')
 const { DatabaseLoader } = require('./app/loaders/database.loader');
 const { RoutesLoader } = require('./app/loaders/routes.loader');
+const  cors  = require ('cors');
 
 
 const app= ExpressLoader.init();
