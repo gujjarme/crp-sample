@@ -96,9 +96,10 @@
 
 
 require('dotenv').config();
-const { ExpressLoader } = require('./loaders/express.loader');
-const { DatabaseLoader } = require('./loaders/database.loader');
-const { RoutesLoader } = require('./loaders/routes.loader');
+//const { ExpressLoader } = require('./loaders/express.loader');
+const {ExpressLoader } = require('./app/loaders/express.loader')
+const { DatabaseLoader } = require('./app/loaders/database.loader');
+const { RoutesLoader } = require('./app/loaders/routes.loader');
 
 
 
