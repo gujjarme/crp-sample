@@ -102,8 +102,8 @@ const { DatabaseLoader } = require('./app/loaders/database.loader');
 const { RoutesLoader } = require('./app/loaders/routes.loader');
 
 
-
 const app= ExpressLoader.init();
+app.use(cors());
 
 DatabaseLoader.init();
 DatabaseLoader.checkConnection();
